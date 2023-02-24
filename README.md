@@ -69,7 +69,7 @@ rm FAF5_regional_od.zip
 
 The script [AnalyzeFAFData.py](./source/AnalyzeFAFData.py) encodes an initial geospatial analysis of the FAF5 highway network assignment data. Follow the [instructions above](#how-to-run-python-scripts) to execute the script in an empty project. 
 
-IMPORTANT: You will need to change the path to the qgis installation on [this line](./source/AnalyzeFAFData.py#L12)!!!
+IMPORTANT: You will need to change the path to the qgis installation on [this line](./source/AnalyzeFAFData.py#L12) and [this line](./source/AnalyzeFAFData.py#L88)!!!
 
 From the conda environment set up above, execute as follows:
 
