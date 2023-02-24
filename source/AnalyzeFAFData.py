@@ -81,11 +81,18 @@ links.setSubsetString('STATE LIKE \'%TX%\'')
 
 
 ################################## Load and process FAF5 highway assignments ###################################
+
+# Set up the processing environment
+# NOTE: This is currently jenky and needs to be improved
+# ***** IMPORTANT: THE PATH CURRENTLY NEEDS TO BE UPDATED BASED ON THE LOCATION OF YOUR QGIS INSTALLATION ****
 sys.path.append('/opt/homebrew/anaconda3/envs/qgis_install/plugins')
 from processing.core.Processing import Processing
 Processing.initialize()
 from processing.tools import *
+
 # Read in the total highway trucking flows by commodity for 2022
+# NOTE: This currently doesn't work properly when running the code standalone
+#       if you look at the fields in the resulting 'Refactored' layer in the GUI, they're mysteriously empty...
 uri = f'{top_dir}/data/FAF5_Highway_Assignment_Results/FAF5_2022_Highway_Assignment_Results/CSV Format/FAF5 Total Truck Flows by Commodity_2022.csv'
 assignments = QgsVectorLayer(uri, 'FAF5 Assignments', 'ogr')
 
@@ -101,6 +108,9 @@ if not assignments.isValid():
 if not QgsProject.instance().mapLayersByName('Refactored'):
     QgsProject.instance().addMapLayer(assignments)
 ###############################################################################################################
+
+# NOTE: Everything below here currently doesn't work when running standalone becasue of the issues with the
+# processing.run() command above.
 
 ################## Join the FAF5 assignments to the highway networks via the highway link IDs ##################
 #assignments = iface.activeLayer()
