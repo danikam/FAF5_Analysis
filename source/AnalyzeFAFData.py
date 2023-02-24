@@ -150,7 +150,7 @@ renderer.setSymbolSizes(0.1, 3)
 links.setRenderer(renderer)
 ################################################################################################################
 
-
+# Save the project 
 project.write(f'{top_dir}/projects/FAF5_Project.qgz')
 
 # Finally, exitQgis() is called to remove the
