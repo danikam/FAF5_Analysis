@@ -8,7 +8,7 @@ import sys
 import processing
 
 # Supply path to qgis install location
-
+# ***** IMPORTANT: THE PATH CURRENTLY NEEDS TO BE UPDATED BASED ON THE LOCATION OF YOUR QGIS INSTALLATION ****
 QgsApplication.setPrefixPath("/opt/homebrew/anaconda3/envs/qgis_install/bin/qgis", True)
 
 # Create a reference to the QgsApplication.  Setting the
